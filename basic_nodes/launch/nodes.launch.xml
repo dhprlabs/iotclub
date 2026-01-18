@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <node pkg="basic_nodes" exec="server" name="dhpr::server" />
+  <node pkg="basic_nodes" exec="talker" name="dhpr::talker" />
+  <node pkg="basic_nodes" exec="listener" name="dhpr::listener" />
+  <node pkg="basic_nodes" exec="client" name="dhpr::client">
+    <param name="a" value="150"/>
+    <param name="b" value="86"/>
+  </node>
+</launch>
