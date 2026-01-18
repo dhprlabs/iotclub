@@ -1,0 +1,12 @@
+launch:
+  - node:
+      pkg: "turtlesim"
+      exec: "turtlesim_node"
+      name: "sim"
+  - node:
+      pkg: "basic_urdf"
+      exec: "turtle_tf2_broadcaster"
+      name: "broadcaster1"
+      param:
+      - name: "turtlename"
+        value: "turtle1"
