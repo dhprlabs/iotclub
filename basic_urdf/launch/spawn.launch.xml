@@ -1,0 +1,33 @@
+<launch>
+    <!-- Arguments -->
+    <arg name="use_sim_time" default="true" description="Use simulation clock if true" />
+    <!-- Variables -->
+    <let name="pkg_basic_urdf" value="$(find-pkg-share basic_urdf)" />
+    <let name="pkg_ros_gz_sim" value="$(find-pkg-share ros_gz_sim)" />
+    <let name="urdf_file" value="$(var pkg_basic_urdf)/description/dhpr.urdf.xacro" />
+    <let name="rviz_config" value="$(var pkg_basic_urdf)/rviz/urdf.rviz" />
+    <!-- Launch files -->
+    <include file="$(var pkg_basic_urdf)/launch/world.launch.xml" />
+    <!-- Rviz -->
+    <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen" args="-d $(var rviz_config)">
+        <param name="use_sim_time" value="$(var use_sim_time)" />
+    </node>
+    <!-- Ros_Gz_Sim -->
+    <node pkg="ros_gz_sim" exec="create" name="ros_gz_sim" output="screen"
+        args="-name dhpr -topic /robot_description -x 0.0 -y 0.0 -z 0.6">
+        <param name="use_sim_time" value="$(var use_sim_time)" />
+    </node>
+    <!-- Robot_State_Publisher -->
+    <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher"
+        output="screen">
+        <param name="use_sim_time" value="$(var use_sim_time)" />
+        <param name="robot_description" value="$(command 'xacro $(var urdf_file)')" />
+        <!-- Making topic relative instead of global -->
+        <remap from="/tf_static" to="tf_static" />
+        <remap from="/tf" to="tf" />
+    </node>
+    <!-- Joint_State_Gui -->
+    <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"
+        name="joint_state_publisher_gui">
+    </node>
+</launch>

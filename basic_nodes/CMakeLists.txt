@@ -16,21 +16,47 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/AddTwoNum.srv"
 )
 
+
+add_executable(static_turtle_tf2_broadcaster src/static_turtle_tf2_broadcaster.cpp)
+ament_target_dependencies(
+  static_turtle_tf2_broadcaster
+  geometry_msgs
+  rclcpp
+  tf2
+  tf2_ros
+)
+install(TARGETS
+  static_turtle_tf2_broadcaster
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+add_executable(turtle_tf2_broadcaster src/turtle_tf2_broadcaster.cpp)
+ament_target_dependencies(
+  turtle_tf2_broadcaster
+  geometry_msgs
+  rclcpp
+  tf2
+  tf2_ros
+  turtlesim
+)
+install(TARGETS
+  turtle_tf2_broadcaster
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 add_executable(server src/add_two_ints_server.cpp)
 ament_target_dependencies(server rclcpp example_interfaces)
 add_executable(client src/add_two_ints_client.cpp)
 ament_target_dependencies(client rclcpp example_interfaces)
-install(TARGETS
-  server
-  client
-  DESTINATION lib/${PROJECT_NAME}
-)
 
 add_executable(talker src/publisher_member_function.cpp)
 ament_target_dependencies(talker rclcpp std_msgs)
 add_executable(listener src/subscriber_member_function.cpp)
 ament_target_dependencies(listener rclcpp std_msgs)
+
 install(TARGETS
+  server
+  client
   talker
   listener
   DESTINATION lib/${PROJECT_NAME}

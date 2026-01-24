@@ -1,8 +1,0 @@
-launch:
-  - include:
-      file: $(find-pkg-share urdf_launch)/launch/display.launch.py
-      arg:
-        - name: urdf_package
-          value: basic_urdf
-        - name: urdf_package_path
-          value: $(find-pkg-share basic_urdf)/description/basic.urdf
