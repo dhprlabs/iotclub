@@ -71,7 +71,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/dhairya/Downloads/obstacle_world.stl</uri>
+              <uri>file:///home/dhairya/Desktop/iot_ws/src/world_models/obstacle_world.stl</uri>
               <scale>5 5 5</scale>
             </mesh>
           </geometry>
@@ -79,7 +79,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/dhairya/Downloads/obstacle_world.stl</uri>
+              <uri>file:///home/dhairya/Desktop/iot_ws/src/world_models/obstacle_world.stl</uri>
               <scale>5 5 5</scale>
             </mesh>
           </geometry>
