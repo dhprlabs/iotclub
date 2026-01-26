@@ -12,9 +12,9 @@
     <node pkg="rviz2" exec="rviz2" name="rviz2" output="screen" args="-d $(var rviz_config)">
         <param name="use_sim_time" value="$(var use_sim_time)" />
     </node>
-    <!-- Ros_Gz_Sim -->
+    <!-- Ros_Gz_Sim (with delay to ensure Gazebo is loaded) -->
     <node pkg="ros_gz_sim" exec="create" name="ros_gz_sim" output="screen"
-        args="-name dhpr -topic /robot_description -x 0.0 -y 0.0 -z 0.6">
+        args="-name dhpr -topic /robot_description -x 0.0 -y 0.0 -z 0.5">
         <param name="use_sim_time" value="$(var use_sim_time)" />
     </node>
     <!-- Robot_State_Publisher -->

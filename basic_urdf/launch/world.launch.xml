@@ -1,5 +1,5 @@
 <launch>
-    <arg name="world" default="industrial_warehouse.sdf" description="Name of the Gazebo world file" />
+    <arg name="world" default="empty.sdf" description="Name of the Gazebo world file" />
     <let name="pkg_basic_urdf" value="$(find-pkg-share basic_urdf)" />
     <let name="pkg_ros_gz_sim" value="$(find-pkg-share ros_gz_sim)" />
     <let name="world_file" value="$(var pkg_basic_urdf)/worlds/$(var world)" />
