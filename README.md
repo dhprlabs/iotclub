@@ -10,3 +10,6 @@
 ### 3D Lidar
 ![3d_lidar](./imgs/3d_lidar.png)
 
+### Maze
+![maze](./imgs/maze.png)
+
