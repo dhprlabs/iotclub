@@ -5,8 +5,8 @@
 ## WORKSHOP-1 
 
 ### 2D Lidar
-![2d_lidar](./img/2d_lidar.png)
+![2d_lidar](./imgs/2d_lidar.png)
 
 ### 3D Lidar
-![3d_lidar](./img/3d_lidar.png)
+![3d_lidar](./imgs/3d_lidar.png)
 
