@@ -61,7 +61,7 @@
       </geometry>
     </collision>
     <visual name='front_left_wheel_visual'>
-      <material name="black" />
+      <material name="orange" />
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
       <geometry>
         <cylinder radius="0.15" length="0.15" />
@@ -91,7 +91,7 @@
       </geometry>
     </collision>
     <visual name='front_right_wheel_visual'>
-      <material name="black" />
+      <material name="orange" />
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
       <geometry>
         <cylinder radius="0.15" length="0.15" />
@@ -121,7 +121,7 @@
       </geometry>
     </collision>
     <visual name='rear_left_wheel_visual'>
-      <material name="black" />
+      <material name="orange" />
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
       <geometry>
         <cylinder radius="0.15" length="0.15" />
@@ -151,7 +151,7 @@
       </geometry>
     </collision>
     <visual name='rear_right_wheel_visual'>
-      <material name="black" />
+      <material name="orange" />
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
       <geometry>
         <cylinder radius="0.15" length="0.15" />

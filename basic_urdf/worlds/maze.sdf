@@ -2,7 +2,7 @@
 
 <sdf version='1.10'>
 
-  <world name='home'>
+  <world name='maze'>
 
     <physics type="ode">
       <max_step_size>0.001</max_step_size>
@@ -32,16 +32,18 @@
       <render_engine>ogre2</render_engine>
     </plugin>
 
-    <light name='sun' type='directional'>
-      <cast_shadows>1</cast_shadows>
-      <pose>0 0 10 0 -0 0</pose>
-      <diffuse>1.0 1.0 1.0 1</diffuse>
-      <specular>0.2 0.2 0.2 1</specular>
+    <light name='point_1' type='directional'>
+      <cast_shadows>true</cast_shadows>
+      <visualize>true</visualize>
+      <intensity>2.5</intensity>
+      <pose>0 0 2 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.5 0.5 0.5 1</specular>
       <attenuation>
         <range>1000</range>
         <constant>0.9</constant>
-        <linear>0.01</linear>
-        <quadratic>0.001</quadratic>
+        <linear>0.5</linear>
+        <quadratic>0.02</quadratic>
       </attenuation>
       <direction>-0.5 0.5 -1.0</direction>
     </light>
@@ -51,43 +53,36 @@
       <background>1 1 1 1</background>
       <shadows>1</shadows>
       <sky>
-        <clouds>
-          <speed>12</speed>
-        </clouds>
+        <sunset>20</sunset>
       </sky>
     </scene>
 
-    <!-- <gui fullscreen='0'>
+    <gui fullscreen='0'>
       <camera name='user_camera'>
-        <pose>39.6939 0.0 20.0 0 0.275643 3.14159</pose>
+        <pose>0 0 6 0 0 0</pose>
         <view_controller>orbit</view_controller>
       </camera>
-    </gui> -->
+    </gui>
 
-    <model name='obstacle_world'>
-      <pose>-20 -14 0 0 0 0</pose>
-      <static>true</static>
+    <model name='maze'>
+      <pose>0 0 0 1.57 0 0</pose>
+      <static>true</static> 
       <link name='link'>
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>file:///home/dhairya/Desktop/iot_ws/src/world_models/obstacle_world.stl</uri>
-              <scale>5 5 5</scale>
+              <uri>/home/dhairya/Desktop/iot_ws/src/basic_urdf/models/new_iot.obj</uri>
+              <scale>1 1 1</scale>
             </mesh>
           </geometry>
         </collision>
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>file:///home/dhairya/Desktop/iot_ws/src/world_models/obstacle_world.stl</uri>
-              <scale>5 5 5</scale>
+              <uri>/home/dhairya/Desktop/iot_ws/src/basic_urdf/models/new_iot.obj</uri>
+              <scale>1 1 1</scale>
             </mesh>
           </geometry>
-          <material>
-            <ambient>0.5 0.5 0.5 1</ambient>
-            <diffuse>0.7 0.7 0.7 1</diffuse>
-            <specular>0.1 0.1 0.1 1</specular>
-          </material>
         </visual>
       </link>
     </model>
