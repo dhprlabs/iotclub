@@ -6,6 +6,7 @@
     <let name="pkg_ros_gz_sim" value="$(find-pkg-share ros_gz_sim)" />
     <let name="urdf_file" value="$(var pkg_basic_urdf)/description/dhpr.urdf.xacro" />
     <let name="rviz_config" value="$(var pkg_basic_urdf)/rviz/urdf.rviz" />
+    <let name="gz_bridge_config" value="$(var pkg_basic_urdf)/config/bridge.yaml" />
     <!-- Launch files -->
     <include file="$(var pkg_basic_urdf)/launch/world.launch.xml" />
     <!-- Rviz -->
@@ -14,7 +15,7 @@
     </node>
     <!-- Ros_Gz_Sim (with delay to ensure Gazebo is loaded) -->
     <node pkg="ros_gz_sim" exec="create" name="ros_gz_sim" output="screen"
-        args="-name dhpr -topic /robot_description -x 0.0 -y 0.0 -z 0.5">
+        args="-name dhpr -topic /robot_description -x 0.0 -y 0.0 -z 0.5 -Y 0.0">
         <param name="use_sim_time" value="$(var use_sim_time)" />
     </node>
     <!-- Robot_State_Publisher -->
@@ -26,8 +27,10 @@
         <remap from="/tf_static" to="tf_static" />
         <remap from="/tf" to="tf" />
     </node>
-    <!-- Joint_State_Gui -->
-    <node pkg="joint_state_publisher_gui" exec="joint_state_publisher_gui"
-        name="joint_state_publisher_gui">
+    <!-- Ros_Gz_Bridge -->
+    <node pkg="ros_gz_bridge" exec="parameter_bridge" name="ros_gz_bridge"
+        output="screen">
+        <param name="config_file" value="$(var gz_bridge_config)" />
+        <param name="use_sim_time" value="$(var use_sim_time)" />
     </node>
 </launch>

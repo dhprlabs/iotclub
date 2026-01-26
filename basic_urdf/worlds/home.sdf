@@ -1,0 +1,330 @@
+<?xml version="1.0"?>
+<sdf version='1.10'>
+  <world name='home'>
+    <physics name='1ms' type='ignored'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+    <plugin
+      filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin
+      filename="gz-sim-contact-system"
+      name="gz::sim::systems::Contact">
+    </plugin>
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+    <gravity>0 0 -9.8000000000000007</gravity>
+    <magnetic_field>5.5644999999999998e-06 2.2875799999999999e-05 -4.2388400000000002e-05</magnetic_field>
+    <atmosphere type='adiabatic' />
+    <scene>
+      <ambient>0.400000006 0.400000006 0.400000006 1</ambient>
+      <background>0.699999988 0.699999988 0.699999988 1</background>
+      <shadows>true</shadows>
+    </scene>
+    <model name='ground_plane'>
+      <static>true</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode />
+            </friction>
+            <bounce />
+            <contact />
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.800000012 0.800000012 0.800000012 1</ambient>
+            <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+            <specular>0.800000012 0.800000012 0.800000012 1</specular>
+          </material>
+        </visual>
+        <pose>0 0 0 0 0 0</pose>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>0 0 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 0.5 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode />
+            </friction>
+            <bounce />
+            <contact />
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>
+                file:/home/dhairya/gazebo_models/brick_box_3x1x3/model://brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>3 0.5 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>model://brick_box_3x1x3/materials/textures/simple_box.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-0.52157545632739222 -3.5235369849765945 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_0'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 0.5 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode />
+            </friction>
+            <bounce />
+            <contact />
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>
+                file:/home/dhairya/gazebo_models/brick_box_3x1x3/model://brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>3 0.5 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>model://brick_box_3x1x3/materials/textures/simple_box.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>2.9440194554757184 5.1299690172161245 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_1'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 0.5 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode />
+            </friction>
+            <bounce />
+            <contact />
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>
+                file:/home/dhairya/gazebo_models/brick_box_3x1x3/model://brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>3 0.5 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>model://brick_box_3x1x3/materials/textures/simple_box.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>-4.4848828511575629 2.8390905579133698 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <model name='brick_box_3x1x3_2'>
+      <static>true</static>
+      <link name='chassis'>
+        <pose>0 0 1.5 0 0 0</pose>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>3 0.5 3</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode />
+            </friction>
+            <bounce />
+            <contact />
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>
+                file:/home/dhairya/gazebo_models/brick_box_3x1x3/model://brick_box_3x1x3/meshes/simple_box.dae</uri>
+              <scale>3 0.5 3</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Wood</name>
+            </script>
+            <pbr>
+              <metal>
+                <albedo_map>model://brick_box_3x1x3/materials/textures/simple_box.png</albedo_map>
+              </metal>
+            </pbr>
+          </material>
+        </visual>
+        <inertial>
+          <pose>0 0 0 0 0 0</pose>
+          <mass>1</mass>
+          <inertia>
+            <ixx>1</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>1</iyy>
+            <iyz>0</iyz>
+            <izz>1</izz>
+          </inertia>
+        </inertial>
+        <enable_wind>false</enable_wind>
+      </link>
+      <pose>3.606583405992108 -0.56902665233713678 0 0 0 0</pose>
+      <self_collide>false</self_collide>
+    </model>
+    <light name='sun' type='directional'>
+      <pose>0 0 10 0 0 0</pose>
+      <cast_shadows>true</cast_shadows>
+      <intensity>1</intensity>
+      <direction>-0.5 0.10000000000000001 -0.90000000000000002</direction>
+      <diffuse>0.800000012 0.800000012 0.800000012 1</diffuse>
+      <specular>0.200000003 0.200000003 0.200000003 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <linear>0.0099999997764825821</linear>
+        <constant>0.89999997615814209</constant>
+        <quadratic>0.0010000000474974513</quadratic>
+      </attenuation>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+  </world>
+</sdf>
