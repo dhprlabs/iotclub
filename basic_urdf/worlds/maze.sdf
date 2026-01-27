@@ -71,7 +71,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>/home/dhairya/Desktop/iot_ws/src/basic_urdf/models/new_iot.obj</uri>
+              <uri>file://models/new_iot.obj</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -79,12 +79,19 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>/home/dhairya/Desktop/iot_ws/src/basic_urdf/models/new_iot.obj</uri>
+              <uri>file://models/new_iot.obj</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
         </visual>
       </link>
     </model>
+
+    <!-- <include>
+      <uri>model://new_iot</uri>
+      <name>maze</name>
+      <pose>0 0 0 1.57 0 0</pose>
+      <static>true</static>
+    </include> -->
   </world>
 </sdf>
