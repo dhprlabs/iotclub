@@ -57,11 +57,15 @@ ament_target_dependencies(talker rclcpp std_msgs)
 add_executable(listener src/subscriber_member_function.cpp)
 ament_target_dependencies(listener rclcpp std_msgs)
 
+add_executable(mypublisher src/my_publisher.cpp)
+ament_target_dependencies(mypublisher rclcpp std_msgs)
+
 install(TARGETS
   server
   client
   talker
   listener
+  mypublisher
   DESTINATION lib/${PROJECT_NAME}
 )
 
