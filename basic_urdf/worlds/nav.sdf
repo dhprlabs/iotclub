@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+
+<sdf version='1.10'>
+
+  <world name='nav'>
+
+    <physics type="ode">
+      <max_step_size>0.001</max_step_size>
+      <real_time_update_rate>1000</real_time_update_rate>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+
+    <plugin
+      filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+    <plugin
+      filename="gz-sim-contact-system"
+      name="gz::sim::systems::Contact">
+    </plugin>
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <light name='pointlight' type='point'>
+      <cast_shadows>true</cast_shadows>
+      <visualize>true</visualize>
+      <intensity>5.0</intensity>
+      <pose>5.8 -6.3 6 0 0 0</pose>
+      <diffuse>1 1 1 1</diffuse>
+      <specular>0.6 0.6 0.6 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.5</linear>
+        <quadratic>0.02</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1.0</direction>
+    </light>
+
+    <scene>
+      <ambient>1 1 1 1</ambient>
+      <background>1 1 1 1</background>
+      <shadows>1</shadows>
+      <grid>false</grid>
+      <sky>
+        <sunset>20</sunset>
+      </sky>
+    </scene>
+
+    <model name='ground'>
+      <pose>6.31 -6.3 0 1.57 0 0</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/nav.obj</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/nav.obj</uri>
+              <scale>3 3 3</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name='cone_1'>
+      <pose>6.72 -1.97 0.4 1.57 0 0.35</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name='cone_2'>
+      <pose>1.7 -5.87 0.4 1.57 0 0.35</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name='cone_3'>
+      <pose>11.53 -6.71 0.4 1.57 0 0.35</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name='cone_4'>
+      <pose>8.41 -10.8 0.4 1.57 0 0.35</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name='cone_5'>
+      <pose>2.84 -1.63 0.4 1.57 0 0.35</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name='cone_6'>
+      <pose>10.81 -0.95 0.4 1.57 0 0.35</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name='cone_7'>
+      <pose>6.9 -6.16 0.4 1.57 0 0.35</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+    <model name='cone_8'>
+      <pose>4.46 -8.75 0.4 1.57 0 0.35</pose>
+      <static>true</static> 
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>file://models/traffic_cone.obj</uri>
+              <scale>0.5 0.5 0.5</scale>
+            </mesh>
+          </geometry>
+        </visual>
+      </link>
+    </model>
+
+  </world>
+
+</sdf>

@@ -15,7 +15,7 @@
     </node>
     <!-- Ros_Gz_Sim (with delay to ensure Gazebo is loaded) -->
     <node pkg="ros_gz_sim" exec="create" name="ros_gz_sim" output="screen"
-        args="-name dhpr -topic /robot_description -x -9.50 -y 9.45 -z 0.5 -Y 0.0">
+        args="-name dhpr -topic /robot_description -x 0.0 -y 0.0 -z 0.5 -Y 0.0">
         <param name="use_sim_time" value="$(var use_sim_time)" />
     </node>
     <!-- Robot_State_Publisher -->
