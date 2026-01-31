@@ -4,7 +4,7 @@
     <arg name="use_sim_time" default="false" description="Use simulation clock if true" />
     <!-- Variables -->
     <let name="pkg_share" value="$(find-pkg-share basic_urdf)" />
-    <let name="urdf_file" value="$(var pkg_share)/description/dhpr.urdf.xacro" />
+    <let name="urdf_file" value="$(var pkg_share)/description/mobile.urdf.xacro" />
     <let name="rviz_config" value="$(var pkg_share)/rviz/urdf.rviz" />
     <!-- Robot_State_Publisher -->
     <node pkg="robot_state_publisher" exec="robot_state_publisher" name="robot_state_publisher" output="screen">
