@@ -40,10 +40,10 @@
   </link>
   <!-- Joint BaseLink -> FrontLeftWheel -->
   <joint type="continuous" name="front_left_wheel_joint">
-    <origin xyz="0.25 0.38 0.05" rpy="0 0 0" />
+    <origin xyz="0.25 0.38 0.05" rpy="-1.5707963267948966 0 0" />
     <child link="front_left_wheel" />
     <parent link="base_link" />
-    <axis xyz="0 1 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
     <limit effort="100" velocity="10"/>
     <dynamics damping="1.0" friction="1.0" />
   </joint>
@@ -51,18 +51,18 @@
   <link name='front_left_wheel'>
     <inertial>
       <mass value="5.0" />
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <inertia ixx="0.014" ixy="0" ixz="0" iyy="0.014" iyz="0" izz="0.025" />
     </inertial>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <cylinder radius="0.15" length="0.10" />
       </geometry>
     </collision>
     <visual name='front_left_wheel_visual'>
       <material name="black" />
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <cylinder radius="0.15" length="0.10" />
       </geometry>
@@ -70,10 +70,10 @@
   </link>
   <!-- Joint BaseLink -> FrontRightWheel -->
   <joint type="continuous" name="front_right_wheel_joint">
-    <origin xyz="0.25 -0.38 0.05" rpy="0 0 0" />
+    <origin xyz="0.25 -0.38 0.05" rpy="1.5707963267948966 0 0" />
     <child link="front_right_wheel" />
     <parent link="base_link" />
-    <axis xyz="0 1 0" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
     <limit effort="100" velocity="10"/>
     <dynamics damping="1.0" friction="1.0" />
   </joint>
@@ -81,18 +81,18 @@
   <link name='front_right_wheel'>
     <inertial>
       <mass value="5.0" />
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <inertia ixx="0.014" ixy="0" ixz="0" iyy="0.014" iyz="0" izz="0.025" />
     </inertial>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <cylinder radius="0.15" length="0.10" />
       </geometry>
     </collision>
     <visual name='front_right_wheel_visual'>
       <material name="black" />
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <cylinder radius="0.15" length="0.10" />
       </geometry>
@@ -100,10 +100,10 @@
   </link>
   <!-- Joint BaseLink -> RearLeftWheel -->
   <joint type="continuous" name="rear_left_wheel_joint">
-    <origin xyz="-0.25 0.38 0.05" rpy="0 0 0" />
+    <origin xyz="-0.25 0.38 0.05" rpy="-1.5707963267948966 0 0" />
     <child link="rear_left_wheel" />
     <parent link="base_link" />
-    <axis xyz="0 1 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
     <limit effort="100" velocity="10"/>
     <dynamics damping="1.0" friction="1.0" />
   </joint>
@@ -111,18 +111,18 @@
   <link name='rear_left_wheel'>
     <inertial>
       <mass value="5.0" />
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <inertia ixx="0.014" ixy="0" ixz="0" iyy="0.014" iyz="0" izz="0.025" />
     </inertial>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <cylinder radius="0.15" length="0.10" />
       </geometry>
     </collision>
     <visual name='rear_left_wheel_visual'>
       <material name="black" />
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <cylinder radius="0.15" length="0.10" />
       </geometry>
@@ -130,10 +130,10 @@
   </link>
   <!-- Joint BaseLink -> RearRightWheel -->
   <joint type="continuous" name="rear_right_wheel_joint">
-    <origin xyz="-0.25 -0.38 0.05" rpy="0 0 0" />
+    <origin xyz="-0.25 -0.38 0.05" rpy="1.5707963267948966 0 0" />
     <child link="rear_right_wheel" />
     <parent link="base_link" />
-    <axis xyz="0 1 0" rpy="0 0 0" />
+    <axis xyz="0 0 -1" />
     <limit effort="100" velocity="10"/>
     <dynamics damping="1.0" friction="1.0" />
   </joint>
@@ -141,18 +141,18 @@
   <link name='rear_right_wheel'>
     <inertial>
       <mass value="5.0" />
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <inertia ixx="0.014" ixy="0" ixz="0" iyy="0.014" iyz="0" izz="0.025" />
     </inertial>
     <collision>
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <cylinder radius="0.15" length="0.10" />
       </geometry>
     </collision>
     <visual name='rear_right_wheel_visual'>
       <material name="black" />
-      <origin xyz="0 0 0" rpy="0 1.5707 1.5707" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
         <cylinder radius="0.15" length="0.10" />
       </geometry>
@@ -160,12 +160,12 @@
   </link>
   <!-- Joint BaseLink -> Lidar -->
   <joint type="fixed" name="lidar_joint">
-    <origin xyz="0 0 0.20" rpy="0 0 0" />
-    <child link="lidar_link" />
+    <origin xyz="0 0 0.25" rpy="0 0 0" />
+    <child link="laser_frame" />
     <parent link="base_link" />
   </joint>
   <!-- Lidar -->
-  <link name='lidar_link'>
+  <link name='laser_frame'>
     <inertial>
       <mass value="0.3" />
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -174,14 +174,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <box size="0.15 0.15 0.15" />
+        <cylinder radius="0.10" length="0.10" />
       </geometry>
     </collision>
-    <visual name='lidar_link_visual'>
+    <visual name='laser_frame_visual'>
       <material name="blue" />
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.13" length="0.10" />
+        <cylinder radius="0.10" length="0.10" />
       </geometry>
     </visual>
   </link>

@@ -4,10 +4,9 @@
 
   <world name='nav'>
 
-    <physics type="ode">
+    <physics name="1ms" type="ignored">
       <max_step_size>0.001</max_step_size>
-      <real_time_update_rate>1000</real_time_update_rate>
-      <real_time_factor>1</real_time_factor>
+      <real_time_factor>1.0</real_time_factor>
     </physics>
 
     <plugin
@@ -32,7 +31,7 @@
       <render_engine>ogre2</render_engine>
     </plugin>
 
-    <light name='pointlight' type='point'>
+    <light name='sun' type='point'>
       <cast_shadows>true</cast_shadows>
       <visualize>true</visualize>
       <intensity>5.0</intensity>
@@ -60,7 +59,7 @@
 
     <model name='ground'>
       <pose>6.31 -6.3 0 1.57 0 0</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -83,7 +82,7 @@
 
     <model name='cone_1'>
       <pose>6.72 -1.97 0.4 1.57 0 0.35</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -106,7 +105,7 @@
 
     <model name='cone_2'>
       <pose>1.7 -5.87 0.4 1.57 0 0.35</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -129,7 +128,7 @@
 
     <model name='cone_3'>
       <pose>11.53 -6.71 0.4 1.57 0 0.35</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -152,7 +151,7 @@
 
     <model name='cone_4'>
       <pose>8.41 -10.8 0.4 1.57 0 0.35</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -175,7 +174,7 @@
 
     <model name='cone_5'>
       <pose>2.84 -1.63 0.4 1.57 0 0.35</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -198,7 +197,7 @@
 
     <model name='cone_6'>
       <pose>10.81 -0.95 0.4 1.57 0 0.35</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -221,7 +220,7 @@
 
     <model name='cone_7'>
       <pose>6.9 -6.16 0.4 1.57 0 0.35</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
@@ -244,7 +243,7 @@
 
     <model name='cone_8'>
       <pose>4.46 -8.75 0.4 1.57 0 0.35</pose>
-      <static>true</static> 
+      <static>true</static>
       <link name='link'>
         <collision name='collision'>
           <geometry>
